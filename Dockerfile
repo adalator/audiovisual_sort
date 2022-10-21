@@ -7,4 +7,4 @@ COPY Pipfile /app
 COPY Pipfile.lock /app
 RUN pipenv install --system --deploy --ignore-pipfile
 COPY src/ /app/src
-CMD ["python", "/app/src/main.py"]
+CMD ["flask", "--app", "/app/src/main", "run"]
